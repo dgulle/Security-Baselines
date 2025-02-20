@@ -20,10 +20,11 @@
   Log file to "$env:TEMP\Create-Windows-11-v24H2-Security-Baseline.log" ,  %temp%\Create-Windows-11-v24H2-Security-Baseline.log
 
 .NOTES
-  Version:        1.0.0
+  Version:        1.0.1
   Author:         Thiago Beier
   Creation Date:  02/18/2025
-  Purpose/Change: Initial script development
+  Purpose/Change: Updates suggested by Jessie S. (https://www.linkedin.com/in/jessies/)
+  Updated Date:   02/18/2025
 
 .EXAMPLE
   .\Create-Windows-11-v24H2-Security-Baseline.ps1 -folderPath "C:\Path\To\Download" -fileUrl "https://github.com/dgulle/Security-Baselines/archive/refs/heads/master.zip"
@@ -130,14 +131,14 @@ else {
 }
 
 # Prompt user for path if it's not provided
-$defaultPath = "C:\Users\Thiago Beier\Downloads\Microsoft Security Compliance Toolkit 1.0\Security-Baselines-master\Security-Baselines-master\Windows Baseline 24H2"
+$defaultPath = Join-Path $folderPath "Security-Baselines-master\Windows Baseline 24H2" #fixed by https://www.linkedin.com/in/jessies/
 if (-not $defaultPath) {
   $defaultPath = Read-Host "Enter the path to the Windows Baseline 24H2 folder (Press Enter to use the default: $defaultPath)"
 }
 
 # If the user didn't enter a path, confirm using the default
 if ($defaultPath) {
-  $confirmation = Read-Host "You haven't entered a path. The default path will be used: $defaultPath. Do you want to proceed? (Y/N)"
+  $confirmation = Read-Host "The following path will be used: $defaultPath. Do you want to proceed? (Y/N)"
   if ($confirmation -ne 'Y') {
     Log-Message "Script aborted."
     exit
@@ -166,12 +167,9 @@ foreach ($jsonfile in $alljsonfiles) {
   Log-Message "Working on baseline: $policyname"
 
   # Check if a policy with the same name already exists
-  $existingPolicy = Get-MgBetaDeviceManagementConfigurationPolicy | Where-Object { $_.DisplayName -eq $policyname }
+  $existingPolicy = Get-MgBetaDeviceManagementConfigurationPolicy | Where-Object { $_.Name -eq $policyname } #updated 20225-02-19
 
-  if ($existingPolicy) {
-    Log-Message "A policy with the name '$policyname' already exists. Skipping creation."
-  }
-  else {
+  if (!$existingPolicy) {
     Log-Message "No existing policy with the name '$policyname'. Proceeding with creation."
 
     # Read the content of the JSON template file
@@ -180,6 +178,10 @@ foreach ($jsonfile in $alljsonfiles) {
 
     Log-Message "Creating baseline Policy: $policyname"
     New-MgBetaDeviceManagementConfigurationPolicy -BodyParameter $params
+    
+  }
+  else {
+    Log-Message "A policy with the name '$policyname' already exists. Skipping creation."
   }
 }
 

@@ -3,12 +3,12 @@
   "createdDateTime": "2025-02-17T14:56:31.3077645Z",
   "creationSource": null,
   "description": "",
-  "lastModifiedDateTime": "2025-02-17T14:56:31.3077645Z",
+  "lastModifiedDateTime": "2025-02-26T18:56:13.7205036Z",
   "name": "Security Baseline 24H2 - Wi-Fi Settings",
   "platforms": "windows10",
   "priorityMetaData": null,
   "roleScopeTagIds": ["0"],
-  "settingCount": 1,
+  "settingCount": 2,
   "technologies": "mdm",
   "id": "bc1feca5-1662-48da-b306-02b25cf72f8f",
   "templateReference": {
@@ -22,11 +22,24 @@
       "id": "0",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "device_vendor_msft_passportforwork_biometrics_facialfeaturesuseenhancedantispoofing",
+        "settingDefinitionId": "device_vendor_msft_policy_config_wifi_allowautoconnecttowifisensehotspots",
         "settingInstanceTemplateReference": null,
         "choiceSettingValue": {
           "settingValueTemplateReference": null,
-          "value": "device_vendor_msft_passportforwork_biometrics_facialfeaturesuseenhancedantispoofing_true",
+          "value": "device_vendor_msft_policy_config_wifi_allowautoconnecttowifisensehotspots_0",
+          "children": []
+        }
+      }
+    },
+    {
+      "id": "1",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "device_vendor_msft_policy_config_wifi_allowinternetsharing",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_wifi_allowinternetsharing_0",
           "children": []
         }
       }

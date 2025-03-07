@@ -1,0 +1,643 @@
+﻿{
+    "description":  "",
+    "name":  "M365 Security Baseline - Outlook",
+    "platforms":  "windows10",
+    "technologies":  "mdm",
+    "templateReference":  {
+                              "templateId":  "90316f12-246d-44c6-a767-f87692e86083_2",
+                              "templateFamily":  "baseline",
+                              "templateDisplayName":  "Microsoft 365 Apps for Enterprise Security Baseline",
+                              "templateDisplayVersion":  "Version 2306"
+                          },
+    "roleScopeTagIds":  [
+                            "0"
+                        ],
+    "settings":  [
+                     {
+                         "id":  "75",
+                         "settingInstance":  {
+                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings_l_outlooksecuritymode",
+                                                 "settingInstanceTemplateReference":  {
+                                                                                          "settingInstanceTemplateId":  "705d3f64-da50-4b03-81ff-d7374813cfb2"
+                                                                                      },
+                                                 "choiceSettingValue":  {
+                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings_l_outlooksecuritymode_1",
+                                                                            "settingValueTemplateReference":  {
+                                                                                                                  "settingValueTemplateId":  "9d4cf456-e5d3-4927-982a-999479333775",
+                                                                                                                  "useTemplateDefault":  false
+                                                                                                              },
+                                                                            "children":  [
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomsend_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "cdc5b172-11a2-4662-b1d3-8b32f33c6596"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomsend_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "9fda60fc-dcd9-4097-9feb-0e4e84a1353d",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+                                                                                                                                             {
+                                                                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomsend_v2_l_oomsend_setting",
+                                                                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                                                                          "settingInstanceTemplateId":  "947b1b2b-6718-477f-964c-0a94dc3e025a"
+                                                                                                                                                                                      },
+                                                                                                                                                 "choiceSettingValue":  {
+                                                                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomsend_v2_l_oomsend_setting_0",
+                                                                                                                                                                            "settingValueTemplateReference": null,
+                                                                                                                                                                            "children": []
+                                                                                                                                                                        }
+                                                                                                                                             }
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security_l_preventusersfromcustomizingattachmentsecuritysettings_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "d5e1600e-73c8-43d2-855d-5cdc4153bf22"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security_l_preventusersfromcustomizingattachmentsecuritysettings_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "74f53af5-7447-4884-963c-1d2bbb5b1399",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_cryptography~l_signaturestatusdialog_l_retrievingcrlscertificaterevocationlists_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "74ed8ff8-b08e-4319-a8cc-d8553f2cec28"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_cryptography~l_signaturestatusdialog_l_retrievingcrlscertificaterevocationlists_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "46d4ffcb-e99c-47e6-a6ac-bbc4bd031e14",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+                                                                                                                                             {
+                                                                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_cryptography~l_signaturestatusdialog_l_retrievingcrlscertificaterevocationlists_v2_l_empty31",
+                                                                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                                                                          "settingInstanceTemplateId":  "f8e49a0f-7d2c-450f-843c-a3549d302789"
+                                                                                                                                                                                      },
+                                                                                                                                                 "choiceSettingValue":  {
+                                                                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_cryptography~l_signaturestatusdialog_l_retrievingcrlscertificaterevocationlists_v2_l_empty31_1",
+                                                                                                                                                                            "settingValueTemplateReference": null,
+                                                                                                                                                                            "children": []
+                                                                                                                                                                        }
+                                                                                                                                             }
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomformula_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "3faef596-03c9-45b8-bc21-b330014a9011"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomformula_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "11da73cb-b878-49d7-91d0-7c16828ff985",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+                                                                                                                                             {
+                                                                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomformula_v2_l_oomformula_setting",
+                                                                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                                                                          "settingInstanceTemplateId":  "b83aaa66-e46c-4075-bb08-59819ab0b389"
+                                                                                                                                                                                      },
+                                                                                                                                                 "choiceSettingValue":  {
+                                                                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomformula_v2_l_oomformula_setting_0",
+                                                                                                                                                                            "settingValueTemplateReference": null,
+                                                                                                                                                                            "children": []
+                                                                                                                                                                        }
+                                                                                                                                             }
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v6~policy~l_microsoftofficeoutlook~l_toolsaccounts~l_exchangesettings_l_authenticationwithexchangeserver_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "2e8ae094-f69d-403c-8016-698383ca6aa9"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v6~policy~l_microsoftofficeoutlook~l_toolsaccounts~l_exchangesettings_l_authenticationwithexchangeserver_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "75cf356a-9b20-4c4b-8a3d-b61c84455c5c",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+                                                                                                                                             {
+                                                                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v6~policy~l_microsoftofficeoutlook~l_toolsaccounts~l_exchangesettings_l_authenticationwithexchangeserver_v2_l_selecttheauthenticationwithexchangeserver",
+                                                                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                                                                          "settingInstanceTemplateId":  "6bb38f9f-cba1-4926-bf8b-75e26aa0a7c3"
+                                                                                                                                                                                      },
+                                                                                                                                                 "choiceSettingValue":  {
+                                                                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v6~policy~l_microsoftofficeoutlook~l_toolsaccounts~l_exchangesettings_l_authenticationwithexchangeserver_v2_l_selecttheauthenticationwithexchangeserver_16",
+                                                                                                                                                                            "settingValueTemplateReference": null,
+                                                                                                                                                                            "children": []
+                                                                                                                                                                        }
+                                                                                                                                             }
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_toolsaccounts~l_exchangesettings_l_enablerpcencryption_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "3017c648-6642-4421-a8ea-c17f369e5e22"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_toolsaccounts~l_exchangesettings_l_enablerpcencryption_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "147a1c68-d637-4adf-818c-4c61edc1018d",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_trustcenter_l_enablelinksinemailmessages_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "9bf61464-9e64-459a-a34c-2c1454a6a95b"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_trustcenter_l_enablelinksinemailmessages_v2_0",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "ad2c5f30-e46b-4947-ad81-c36e366cbb4f",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomaddressbook_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "357fbba1-cb81-428e-9103-322c82f2aa81"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomaddressbook_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "e3b93f4d-4a04-4b35-97d8-141b33c115f9",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+                                                                                                                                             {
+                                                                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomaddressbook_v2_l_oomaddressbook_setting",
+                                                                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                                                                          "settingInstanceTemplateId":  "1f42ef73-60d2-4a25-a5e4-e247b3057487"
+                                                                                                                                                                                      },
+                                                                                                                                                 "choiceSettingValue":  {
+                                                                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomaddressbook_v2_l_oomaddressbook_setting_0",
+                                                                                                                                                                            "settingValueTemplateReference": null,
+                                                                                                                                                                            "children": []
+                                                                                                                                                                        }
+                                                                                                                                             }
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings_l_outlooksecuritymode_l_outlooksecuritypolicy",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "3e45f300-4423-45f5-b6ce-0af09b6dcbcd"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings_l_outlooksecuritymode_l_outlooksecuritypolicy_3",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "8c93336d-1e99-4f07-8907-f2a307d8e66a",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_miscattachmentsettings_l_allowuserstolowerattachments_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "a0cfcf38-d7c9-4288-9dd6-3e24f34343dc"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_miscattachmentsettings_l_allowuserstolowerattachments_v2_0",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "d1051e5f-3229-471f-83d1-a27e14743903",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security_l_allowactivexoneoffforms_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "78ad56b3-4150-4655-bcdd-7c808331ffc1"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security_l_allowactivexoneoffforms_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "620534e3-7ff7-4663-9730-78fa9a5d68d1",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+                                                                                                                                             {
+                                                                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security_l_allowactivexoneoffforms_v2_l_empty29",
+                                                                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                                                                          "settingInstanceTemplateId":  "7c5cb78e-833d-4c67-8273-4d3388f7e941"
+                                                                                                                                                                                      },
+                                                                                                                                                 "choiceSettingValue":  {
+                                                                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security_l_allowactivexoneoffforms_v2_l_empty29_0",
+                                                                                                                                                                            "settingValueTemplateReference": null,
+                                                                                                                                                                            "children": []
+                                                                                                                                                                        }
+                                                                                                                                             }
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_misccustomformsettings_l_enablescriptsinoneoffforms_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "91a052a5-000c-49d8-a316-5ea2cb9b51b9"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_misccustomformsettings_l_enablescriptsinoneoffforms_v2_0",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "69e5c85d-21e0-4c88-854d-37daf57dfae1",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_miscattachmentsettings_l_level2removefilepolicy_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "a4162d3a-ee63-4154-a67d-bd86b8a021b5"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_miscattachmentsettings_l_level2removefilepolicy_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "732ec81d-5b5f-4e6f-a516-a04eec39104e",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+                                                                                                                                             {
+                                                                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance",
+                                                                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_miscattachmentsettings_l_level2removefilepolicy_v2_l_removedextensions25",
+                                                                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                                                                          "settingInstanceTemplateId":  "9d2df2e6-a4f9-41c7-83cf-61e5afddd2f9"
+                                                                                                                                                                                      },
+                                                                                                                                                 "simpleSettingValue":  {
+                                                                                                                                                                            "@odata.type":  "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+                                                                                                                                                                            "value":  ";",
+                                                                                                                                                                            "settingValueTemplateReference": null
+                                                                                                                                                                        }
+                                                                                                                                             }
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_outlookoptions~l_other~l_advanced_l_msgunicodeformatwhendraggingtofilesystem_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "9bfb5220-454a-485b-ba4f-660214c9a099"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_outlookoptions~l_other~l_advanced_l_msgunicodeformatwhendraggingtofilesystem_v2_0",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "0c6ab7c7-0b68-4903-b8fc-22cbf99de556",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_misccustomformsettings_l_onexecutecustomactionoom_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "4adb77b3-fb09-4b87-a6b4-ab72411459a4"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_misccustomformsettings_l_onexecutecustomactionoom_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "b1afa618-face-4665-a17e-87273c7d23e2",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+                                                                                                                                             {
+                                                                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_misccustomformsettings_l_onexecutecustomactionoom_v2_l_onexecutecustomactionoom_setting",
+                                                                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                                                                          "settingInstanceTemplateId":  "9de022c1-f2e8-4705-8787-55d7aee1fa62"
+                                                                                                                                                                                      },
+                                                                                                                                                 "choiceSettingValue":  {
+                                                                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_misccustomformsettings_l_onexecutecustomactionoom_v2_l_onexecutecustomactionoom_setting_0",
+                                                                                                                                                                            "settingValueTemplateReference": null,
+                                                                                                                                                                            "children": []
+                                                                                                                                                                        }
+                                                                                                                                             }
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_outlookoptions~l_other~l_advanced_l_disableoutlookobjectmodelscriptsforpublicfolders_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "de0d733f-ecf2-47cb-be62-ba9bc1d21694"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_outlookoptions~l_other~l_advanced_l_disableoutlookobjectmodelscriptsforpublicfolders_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "f6e9273a-a6ff-433a-8f9c-55d9ea6bed93",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_automaticpicturedownloadsettings_l_blockinternet_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "72500891-52b6-4951-8a60-fa48042d05d9"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_automaticpicturedownloadsettings_l_blockinternet_v2_0",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "74711732-6ee0-46ce-88f7-dee5d39c081b",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_trustcenter_l_securityleveloutlook_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "86e6b8cc-54d2-4ea7-9db0-9350dbef0380"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_trustcenter_l_securityleveloutlook_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "8d49ad4c-9b8a-49e4-9ebf-24d334a76b47",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+                                                                                                                                             {
+                                                                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_trustcenter_l_securityleveloutlook_v2_l_securitylevel",
+                                                                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                                                                          "settingInstanceTemplateId":  "a3c9d769-e03f-48c2-b321-f9fe9f85503f"
+                                                                                                                                                                                      },
+                                                                                                                                                 "choiceSettingValue":  {
+                                                                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_trustcenter_l_securityleveloutlook_v2_l_securitylevel_3",
+                                                                                                                                                                            "settingValueTemplateReference": null,
+                                                                                                                                                                            "children": []
+                                                                                                                                                                        }
+                                                                                                                                             }
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_miscattachmentsettings_l_level1removefilepolicy_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "6745c0be-c41c-41ea-bf96-788841e71eef"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_miscattachmentsettings_l_level1removefilepolicy_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "374b8456-3fa4-4569-8d22-97908cf17e28",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+                                                                                                                                             {
+                                                                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance",
+                                                                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_miscattachmentsettings_l_level1removefilepolicy_v2_l_removedextensions",
+                                                                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                                                                          "settingInstanceTemplateId":  "a74ee906-7e88-4c98-a8a3-c53b0b54bf71"
+                                                                                                                                                                                      },
+                                                                                                                                                 "simpleSettingValue":  {
+                                                                                                                                                                            "@odata.type":  "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+                                                                                                                                                                            "value":  ";",
+                                                                                                                                                                            "settingValueTemplateReference": null
+                                                                                                                                                                        }
+                                                                                                                                             }
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_cryptography_l_signaturewarning_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "9de22334-c60a-4b1a-8f33-bcb5a0bfdf8a"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_cryptography_l_signaturewarning_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "955d049c-b66f-4257-91e3-ebf2862040d9",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+                                                                                                                                             {
+                                                                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_cryptography_l_signaturewarning_v2_l_signaturewarning30",
+                                                                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                                                                          "settingInstanceTemplateId":  "2b544b5a-5d0f-4f19-b117-6f8775fef3a2"
+                                                                                                                                                                                      },
+                                                                                                                                                 "choiceSettingValue":  {
+                                                                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_cryptography_l_signaturewarning_v2_l_signaturewarning30_1",
+                                                                                                                                                                            "settingValueTemplateReference": null,
+                                                                                                                                                                            "children": []
+                                                                                                                                                                        }
+                                                                                                                                             }
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_miscattachmentsettings_l_level1attachments_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "4e890960-99fb-4b9b-8e39-4c8eb14ad4cb"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_miscattachmentsettings_l_level1attachments_v2_0",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "05b45f54-6dbb-4b7b-8bdb-61eb06a50dff",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_cryptography_l_minimumencryptionsettings_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "90d412f9-b3d4-4bc7-9988-fd8ac0964d81"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_cryptography_l_minimumencryptionsettings_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "1092f766-7b92-49fd-9945-597bd5c79539",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+                                                                                                                                             {
+                                                                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance",
+                                                                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_cryptography_l_minimumencryptionsettings_v2_l_minimumkeysizeinbits",
+                                                                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                                                                          "settingInstanceTemplateId":  "426bb916-c26b-40f6-b467-b9d34d356750"
+                                                                                                                                                                                      },
+                                                                                                                                                 "simpleSettingValue":  {
+                                                                                                                                                                            "@odata.type":  "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+                                                                                                                                                                            "value":  168,
+                                                                                                                                                                            "settingValueTemplateReference": null
+                                                                                                                                                                        }
+                                                                                                                                             }
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_outlookoptions~l_other~l_advanced_l_disableoutlookobjectmodelscripts_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "3a74eb4c-744f-4cf0-bde0-6d89dcb39ac8"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_outlookoptions~l_other~l_advanced_l_disableoutlookobjectmodelscripts_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "ddf6ee95-7649-40df-b305-0d784ab7ce90",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomsaveas_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "f5c8df81-51a0-4ba5-abe4-9a104c28e28d"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomsaveas_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "736b52fe-0386-44bf-9fa7-e9c2ec735591",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+                                                                                                                                             {
+                                                                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomsaveas_v2_l_oomsaveas_setting",
+                                                                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                                                                          "settingInstanceTemplateId":  "15bb3d76-4f27-40b3-a04d-03a3bbb0eb3c"
+                                                                                                                                                                                      },
+                                                                                                                                                 "choiceSettingValue":  {
+                                                                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomsaveas_v2_l_oomsaveas_setting_0",
+                                                                                                                                                                            "settingValueTemplateReference": null,
+                                                                                                                                                                            "children": []
+                                                                                                                                                                        }
+                                                                                                                                             }
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomaddressaccess_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "87097a0c-1dd0-45cd-ac03-668b3316f73e"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomaddressaccess_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "9ac3bc75-7c75-42fd-b30d-6417c0e82132",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+                                                                                                                                             {
+                                                                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomaddressaccess_v2_l_oomaddressaccess_setting",
+                                                                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                                                                          "settingInstanceTemplateId":  "c5dab5db-9ab3-4844-8644-a96b9cfcee84"
+                                                                                                                                                                                      },
+                                                                                                                                                 "choiceSettingValue":  {
+                                                                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oomaddressaccess_v2_l_oomaddressaccess_setting_0",
+                                                                                                                                                                            "settingValueTemplateReference": null,
+                                                                                                                                                                            "children": []
+                                                                                                                                                                        }
+                                                                                                                                             }
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             },
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oommeetingtaskrequest_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "04f4640b-3d9d-4a39-a3df-27cb9cf5d104"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oommeetingtaskrequest_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "982956c1-6195-439c-8d20-9bfb4b4fa4b0",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+                                                                                                                                             {
+                                                                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oommeetingtaskrequest_v2_l_oommeetingtaskrequest_setting",
+                                                                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                                                                          "settingInstanceTemplateId":  "18da2cf3-5884-4ff6-a9e0-870094fd5b3f"
+                                                                                                                                                                                      },
+                                                                                                                                                 "choiceSettingValue":  {
+                                                                                                                                                                            "value":  "user_vendor_msft_policy_config_outlk16v2~policy~l_microsoftofficeoutlook~l_security~l_securityformsettings~l_programmaticsettings_l_oommeetingtaskrequest_v2_l_oommeetingtaskrequest_setting_0",
+                                                                                                                                                                            "settingValueTemplateReference": null,
+                                                                                                                                                                            "children": []
+                                                                                                                                                                        }
+                                                                                                                                             }
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             }
+                                                                                         ]
+                                                                        }
+                                             }
+                     }
+                 ]
+}

@@ -1,0 +1,165 @@
+﻿{
+    "description":  "",
+    "name":  "M365 Baseline - Publisher",
+    "platforms":  "windows10",
+    "technologies":  "mdm",
+    "templateReference":  {
+                              "templateId":  "90316f12-246d-44c6-a767-f87692e86083_2",
+                              "templateFamily":  "baseline",
+                              "templateDisplayName":  "Microsoft 365 Apps for Enterprise Security Baseline",
+                              "templateDisplayVersion":  "Version 2306"
+                          },
+    "roleScopeTagIds":  [
+                            "0"
+                        ],
+    "settings":  [
+                     {
+                         "id":  "94",
+                         "settingInstance":  {
+                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_pub16v3~policy~l_microsoftofficepublisher~l_security~l_trustcenter_l_blockmacroexecutionfrominternet",
+                                                 "settingInstanceTemplateReference":  {
+                                                                                          "settingInstanceTemplateId":  "a25e6032-9936-4a0e-b87c-268bdd3817b3"
+                                                                                      },
+                                                 "choiceSettingValue":  {
+                                                                            "value":  "user_vendor_msft_policy_config_pub16v3~policy~l_microsoftofficepublisher~l_security~l_trustcenter_l_blockmacroexecutionfrominternet_1",
+                                                                            "settingValueTemplateReference":  {
+                                                                                                                  "settingValueTemplateId":  "25691e5e-5a99-4961-9456-10f46a184bf3",
+                                                                                                                  "useTemplateDefault":  false
+                                                                                                              },
+                                                                            "children":  [
+
+                                                                                         ]
+                                                                        }
+                                             }
+                     },
+                     {
+                         "id":  "95",
+                         "settingInstance":  {
+                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_pub16v2~policy~l_microsoftofficepublisher~l_security~l_trustcenter_l_disabletrustbarnotificationforunsigned",
+                                                 "settingInstanceTemplateReference":  {
+                                                                                          "settingInstanceTemplateId":  "1ef2e77b-22c5-424c-95d7-1a9d46c29b89"
+                                                                                      },
+                                                 "choiceSettingValue":  {
+                                                                            "value":  "user_vendor_msft_policy_config_pub16v2~policy~l_microsoftofficepublisher~l_security~l_trustcenter_l_disabletrustbarnotificationforunsigned_1",
+                                                                            "settingValueTemplateReference":  {
+                                                                                                                  "settingValueTemplateId":  "a78c4482-a45e-4613-b421-4926cefd530e",
+                                                                                                                  "useTemplateDefault":  false
+                                                                                                              },
+                                                                            "children":  [
+
+                                                                                         ]
+                                                                        }
+                                             }
+                     },
+                     {
+                         "id":  "96",
+                         "settingInstance":  {
+                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_pub16v2~policy~l_microsoftofficepublisher~l_security~l_trustcenter_l_requirethatapplicationextensionsaresigned",
+                                                 "settingInstanceTemplateReference":  {
+                                                                                          "settingInstanceTemplateId":  "03b5ed73-278c-4ce6-ad14-91c9d8112107"
+                                                                                      },
+                                                 "choiceSettingValue":  {
+                                                                            "value":  "user_vendor_msft_policy_config_pub16v2~policy~l_microsoftofficepublisher~l_security~l_trustcenter_l_requirethatapplicationextensionsaresigned_1",
+                                                                            "settingValueTemplateReference":  {
+                                                                                                                  "settingValueTemplateId":  "e0e6be5a-b5d7-4bb9-ba65-43bc1e19bd1a",
+                                                                                                                  "useTemplateDefault":  false
+                                                                                                              },
+                                                                            "children":  [
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_pub16v2~policy~l_microsoftofficepublisher~l_security~l_trustcenter_l_disabletrustbarnotificationforunsigned_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "433ac4f0-c5b6-4588-b437-111dc974a762"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_pub16v2~policy~l_microsoftofficepublisher~l_security~l_trustcenter_l_disabletrustbarnotificationforunsigned_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "8655df92-b352-4866-ad14-3f040636f2c4",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             }
+                                                                                         ]
+                                                                        }
+                                             }
+                     },
+                     {
+                         "id":  "97",
+                         "settingInstance":  {
+                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_pub16v2~policy~l_microsoftofficepublisher~l_security~l_trustcenter_l_vbawarningspolicy",
+                                                 "settingInstanceTemplateReference":  {
+                                                                                          "settingInstanceTemplateId":  "d7066b66-6a37-4612-96ea-0ba5767df977"
+                                                                                      },
+                                                 "choiceSettingValue":  {
+                                                                            "value":  "user_vendor_msft_policy_config_pub16v2~policy~l_microsoftofficepublisher~l_security~l_trustcenter_l_vbawarningspolicy_1",
+                                                                            "settingValueTemplateReference":  {
+                                                                                                                  "settingValueTemplateId":  "a0678aa5-e110-4a1c-bdd9-19b9afc40b2d",
+                                                                                                                  "useTemplateDefault":  false
+                                                                                                              },
+                                                                            "children":  [
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_pub16v2~policy~l_microsoftofficepublisher~l_security~l_trustcenter_l_vbawarningspolicy_l_empty0",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "73ce641f-94b7-4063-b87b-f0de279a3e27"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_pub16v2~policy~l_microsoftofficepublisher~l_security~l_trustcenter_l_vbawarningspolicy_l_empty0_3",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "22669617-95a4-4a67-a5c8-05ee8d6bb76e",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             }
+                                                                                         ]
+                                                                        }
+                                             }
+                     },
+                     {
+                         "id":  "98",
+                         "settingInstance":  {
+                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_pub16v2~policy~l_microsoftofficepublisher~l_security_l_publisherautomationsecuritylevel",
+                                                 "settingInstanceTemplateReference":  {
+                                                                                          "settingInstanceTemplateId":  "0924c7eb-17de-46eb-b94d-9bce4c688f84"
+                                                                                      },
+                                                 "choiceSettingValue":  {
+                                                                            "value":  "user_vendor_msft_policy_config_pub16v2~policy~l_microsoftofficepublisher~l_security_l_publisherautomationsecuritylevel_1",
+                                                                            "settingValueTemplateReference":  {
+                                                                                                                  "settingValueTemplateId":  "61ebffc0-e322-459e-aebf-69b0256d459c",
+                                                                                                                  "useTemplateDefault":  false
+                                                                                                              },
+                                                                            "children":  [
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_pub16v2~policy~l_microsoftofficepublisher~l_security_l_publisherautomationsecuritylevel_l_empty",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "f1cca04a-4d10-4676-bd3d-87f92463a86d"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_pub16v2~policy~l_microsoftofficepublisher~l_security_l_publisherautomationsecuritylevel_l_empty_2",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "e4a48eda-50d9-4f7e-b4a9-1d46794ff779",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             }
+                                                                                         ]
+                                                                        }
+                                             }
+                     }
+                 ]
+}

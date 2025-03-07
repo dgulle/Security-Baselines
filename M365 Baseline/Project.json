@@ -1,0 +1,129 @@
+﻿{
+    "description":  "",
+    "name":  "M365 Baseline - Project",
+    "platforms":  "windows10",
+    "technologies":  "mdm",
+    "templateReference":  {
+                              "templateId":  "90316f12-246d-44c6-a767-f87692e86083_2",
+                              "templateFamily":  "baseline",
+                              "templateDisplayName":  "Microsoft 365 Apps for Enterprise Security Baseline",
+                              "templateDisplayVersion":  "Version 2306"
+                          },
+    "roleScopeTagIds":  [
+                            "0"
+                        ],
+    "settings":  [
+                     {
+                         "id":  "90",
+                         "settingInstance":  {
+                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_proj16v2~policy~l_proj~l_projectoptions~l_security~l_trustcenter_l_allowtrustedlocationsonthenetwork",
+                                                 "settingInstanceTemplateReference":  {
+                                                                                          "settingInstanceTemplateId":  "63fb19eb-2ae4-4a12-9e04-928d2f547301"
+                                                                                      },
+                                                 "choiceSettingValue":  {
+                                                                            "value":  "user_vendor_msft_policy_config_proj16v2~policy~l_proj~l_projectoptions~l_security~l_trustcenter_l_allowtrustedlocationsonthenetwork_0",
+                                                                            "settingValueTemplateReference":  {
+                                                                                                                  "settingValueTemplateId":  "37cd6e56-cf32-4847-86d8-dd3cdb170925",
+                                                                                                                  "useTemplateDefault":  false
+                                                                                                              },
+                                                                            "children":  [
+
+                                                                                         ]
+                                                                        }
+                                             }
+                     },
+                     {
+                         "id":  "91",
+                         "settingInstance":  {
+                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_proj16v2~policy~l_proj~l_projectoptions~l_security~l_trustcenter_l_disabletrustbarnotificationforunsigned",
+                                                 "settingInstanceTemplateReference":  {
+                                                                                          "settingInstanceTemplateId":  "2dbb9da0-bee9-4f54-b296-dc32da841bb6"
+                                                                                      },
+                                                 "choiceSettingValue":  {
+                                                                            "value":  "user_vendor_msft_policy_config_proj16v2~policy~l_proj~l_projectoptions~l_security~l_trustcenter_l_disabletrustbarnotificationforunsigned_1",
+                                                                            "settingValueTemplateReference":  {
+                                                                                                                  "settingValueTemplateId":  "cf233951-c8fc-409b-86fd-73278c00ed77",
+                                                                                                                  "useTemplateDefault":  false
+                                                                                                              },
+                                                                            "children":  [
+
+                                                                                         ]
+                                                                        }
+                                             }
+                     },
+                     {
+                         "id":  "92",
+                         "settingInstance":  {
+                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_proj16v2~policy~l_proj~l_projectoptions~l_security~l_trustcenter_l_requirethatapplicationextensionsaresigned",
+                                                 "settingInstanceTemplateReference":  {
+                                                                                          "settingInstanceTemplateId":  "fd71011c-e674-4a04-99a8-4a6bbe8fa882"
+                                                                                      },
+                                                 "choiceSettingValue":  {
+                                                                            "value":  "user_vendor_msft_policy_config_proj16v2~policy~l_proj~l_projectoptions~l_security~l_trustcenter_l_requirethatapplicationextensionsaresigned_1",
+                                                                            "settingValueTemplateReference":  {
+                                                                                                                  "settingValueTemplateId":  "c17b9cc1-a2eb-4acd-8d4e-4be507159a97",
+                                                                                                                  "useTemplateDefault":  false
+                                                                                                              },
+                                                                            "children":  [
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_proj16v2~policy~l_proj~l_projectoptions~l_security~l_trustcenter_l_disabletrustbarnotificationforunsigned_v2",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "98fe3dc8-a107-44fb-86f5-ae913ed848f8"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_proj16v2~policy~l_proj~l_projectoptions~l_security~l_trustcenter_l_disabletrustbarnotificationforunsigned_v2_1",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "f8a1b8c8-3121-4c74-a22c-eef268cbcba3",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             }
+                                                                                         ]
+                                                                        }
+                                             }
+                     },
+                     {
+                         "id":  "93",
+                         "settingInstance":  {
+                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_proj16v2~policy~l_proj~l_projectoptions~l_security~l_trustcenter_l_vbawarningspolicy",
+                                                 "settingInstanceTemplateReference":  {
+                                                                                          "settingInstanceTemplateId":  "52221508-f393-4a98-b00a-655d7ff9a4a7"
+                                                                                      },
+                                                 "choiceSettingValue":  {
+                                                                            "value":  "user_vendor_msft_policy_config_proj16v2~policy~l_proj~l_projectoptions~l_security~l_trustcenter_l_vbawarningspolicy_1",
+                                                                            "settingValueTemplateReference":  {
+                                                                                                                  "settingValueTemplateId":  "824fd537-76b7-4f33-a991-026047220560",
+                                                                                                                  "useTemplateDefault":  false
+                                                                                                              },
+                                                                            "children":  [
+                                                                                             {
+                                                                                                 "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                                                                                 "settingDefinitionId":  "user_vendor_msft_policy_config_proj16v2~policy~l_proj~l_projectoptions~l_security~l_trustcenter_l_vbawarningspolicy_l_empty",
+                                                                                                 "settingInstanceTemplateReference":  {
+                                                                                                                                          "settingInstanceTemplateId":  "eff2b81d-8a64-45f4-9bea-f5ccd76f0295"
+                                                                                                                                      },
+                                                                                                 "choiceSettingValue":  {
+                                                                                                                            "value":  "user_vendor_msft_policy_config_proj16v2~policy~l_proj~l_projectoptions~l_security~l_trustcenter_l_vbawarningspolicy_l_empty_3",
+                                                                                                                            "settingValueTemplateReference":  {
+                                                                                                                                                                  "settingValueTemplateId":  "b12df6e3-8b2b-4ff1-b54b-be69302fd6ea",
+                                                                                                                                                                  "useTemplateDefault":  false
+                                                                                                                                                              },
+                                                                                                                            "children":  [
+
+                                                                                                                                         ]
+                                                                                                                        }
+                                                                                             }
+                                                                                         ]
+                                                                        }
+                                             }
+                     }
+                 ]
+}

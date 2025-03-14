@@ -1,7 +1,24 @@
+<#
+.SYNOPSIS
+    Downloads and processes M365 Security Baseline templates into separate JSON files by category.
+.DESCRIPTION
+    This script downloads the M365 Security Baseline template from GitHub, then splits it into
+    separate files based on application categories for easier management and implementation.
+.NOTES
+    Version: 1.0
+.PARAMETER OutputDirectory
+    The base directory where all files will be stored.
+#>
+[CmdletBinding()]
+param(
+    [Parameter()]
+    [string]$OutputDirectory = "C:\M365_Baseline"
+)
+
+
 # Define the URL of the M365 Security Baseline JSON file on GitHub
-$outputDirectory = "C:\M365_Baselines"
 $templateDirectory = Join-Path -Path $outputDirectory -ChildPath "Template"
-$githubUrl = "https://raw.githubusercontent.com/dgulle/Security-Baselines/master/M365%20Baseline/Baseline%20Template/M365%20Baseline%20Template.json"
+$githubUrl = "https://raw.githubusercontent.com/dgulle/Security-Baselines/refs/heads/master/M365%20Baseline/Baseline%20Template%20and%20Script/M365%20Baselines%20Export.ps1"
 $localFile = Join-Path -Path $templateDirectory -ChildPath "M365_Security_Baseline_Template.json"
 
 Write-Host "Downloading baseline template from GitHub..." -ForegroundColor Cyan

@@ -10,7 +10,7 @@
 [CmdletBinding()]
 param(
     [Parameter()]
-    [string]$OutputDirectory = "C:\Edge_Baselines"
+    [string]$OutputDirectory = "C:\Edge_Baseline"
 )
 
 # Setup paths and URLs

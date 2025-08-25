@@ -18,7 +18,7 @@ param(
 
 # Define the URL of the M365 Security Baseline JSON file on GitHub
 $templateDirectory = Join-Path -Path $outputDirectory -ChildPath "Template"
-$githubUrl = "https://github.com/dgulle/Security-Baselines/blob/master/M365%20Baseline/Baseline%20Template%20and%20Script/M365%20Baseline%20Template.json"
+$githubUrl = "https://raw.githubusercontent.com/dgulle/Security-Baselines/refs/heads/master/M365%20Baseline/Baseline%20Template%20and%20Script/M365%20Baseline%20Template.json"
 $localFile = Join-Path -Path $templateDirectory -ChildPath "M365_Security_Baseline_Template.json"
 
 Write-Host "Downloading baseline template from GitHub..." -ForegroundColor Cyan

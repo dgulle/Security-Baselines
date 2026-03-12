@@ -5,184 +5,207 @@
   Post reference: https://www.getrubix.com/blog/rolling-out-intune-security-baselines-without-causing-a-workplace-uprising
 
 .DESCRIPTION
-    Read Security-Baselines-master\Windows Baseline 24H2 json files one by one
-    Parse as $params variable
-    Create new policy in Intune for each json file from Windows Baseline 24H2
+    Downloads the Security-Baselines repository from GitHub, extracts the Windows Baseline 24H2
+    JSON files, and creates a new Intune device management configuration policy for each one.
+    Existing policies with the same name are skipped. A log file and final summary are produced.
 
-.INPUTS
-    -folderPath : The path to the folder where the GitHub file will be downloaded and extracted (optional)
-        If not provided, the script will use a default path.
-    -fileUrl : The GitHub raw file URL to download a zip file (optional)
-        If not provided, the script will use a default URL.
+.PARAMETER FolderPath
+    The local folder used to download and extract the GitHub archive.
+    Default: C:\temp\Windows 11 v24H2 Security Baseline
+
+.PARAMETER FileUrl
+    The URL of the GitHub zip archive to download.
+    Default: https://github.com/dgulle/Security-Baselines/archive/refs/heads/master.zip
 
 .OUTPUTS
   Status messages on screen.
-  Log file to "$env:TEMP\Create-Windows-11-v24H2-Security-Baseline.log" ,  %temp%\Create-Windows-11-v24H2-Security-Baseline.log
+  Log file at "$env:TEMP\Create-Windows-11-v24H2-Security-Baseline.log"
 
 .NOTES
-  Version:        1.0.1
+  Version:        2.0.0
   Author:         Thiago Beier
   Creation Date:  02/18/2025
-  Purpose/Change: Updates suggested by Jessie S. (https://www.linkedin.com/in/jessies/)
-  Updated Date:   02/18/2025
+  Purpose/Change: Rewritten for clarity and improved user experience.
+  Updated Date:   03/12/2026
 
 .EXAMPLE
-  .\Create-Windows-11-v24H2-Security-Baseline.ps1 -folderPath "C:\Path\To\Download" -fileUrl "https://github.com/dgulle/Security-Baselines/archive/refs/heads/master.zip"
-#>
+  .\Create-Windows-11-v24H2-Security-Baseline.ps1
+  Runs with default settings after user confirmation.
 
+.EXAMPLE
+  .\Create-Windows-11-v24H2-Security-Baseline.ps1 -FolderPath "C:\MyBaselines" -FileUrl "https://github.com/dgulle/Security-Baselines/archive/refs/heads/master.zip"
+  Runs with custom folder path and URL.
+#>
+[CmdletBinding()]
 param (
-  [string]$folderPath = "C:\temp\Windows 11 v24H2 Security Baseline", # Default path for downloading and extracting the file
-  [string]$fileUrl = "https://github.com/dgulle/Security-Baselines/archive/refs/heads/master.zip"  # Default GitHub file URL
+  [Parameter(HelpMessage = "Local folder for downloading and extracting the GitHub archive.")]
+  [string]$FolderPath = "C:\temp\Windows 11 v24H2 Security Baseline",
+
+  [Parameter(HelpMessage = "URL of the GitHub zip archive to download.")]
+  [string]$FileUrl = "https://github.com/dgulle/Security-Baselines/archive/refs/heads/master.zip"
 )
 
-# Log file location
+# ── Logging ──────────────────────────────────────────────────────────────────
 $logFilePath = "$env:TEMP\Create-Windows-11-v24H2-Security-Baseline.log"
 
-# Function to log messages to both console and log file
-function Log-Message {
+function Write-Log {
   param (
-    [string]$message
+    [string]$Message,
+    [string]$Color = "White"
   )
-
-  # Write message to console
-  Write-Host $message
-
-  # Write message to log file
-  Add-Content -Path $logFilePath -Value "$(Get-Date) - $message"
+  Write-Host $Message -ForegroundColor $Color
+  Add-Content -Path $logFilePath -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - $Message"
 }
 
-# Start logging
-Log-Message "Starting script execution..."
+# ── Step 1 – Confirm settings ───────────────────────────────────────────────
+Write-Host ""
+Write-Host "============================================================" -ForegroundColor Cyan
+Write-Host "  Windows 11 v24H2 Security Baseline – Intune Policy Setup  " -ForegroundColor Cyan
+Write-Host "============================================================" -ForegroundColor Cyan
+Write-Host ""
+Write-Log "Step 1: Review settings"
+Write-Host "  Folder path : $FolderPath" -ForegroundColor Yellow
+Write-Host "  File URL    : $FileUrl"    -ForegroundColor Yellow
+Write-Host ""
 
-# Ask user to confirm default parameters or input their own values
-Log-Message "Current settings:"
-Log-Message "Folder path: $folderPath"
-Log-Message "File URL: $fileUrl"
+$proceed = Read-Host "Continue with these settings? (Y/N)"
+if ($proceed -notin @('Y', 'y')) {
+  $newFolder = Read-Host "  Enter folder path (press Enter to keep default)"
+  if ($newFolder) { $FolderPath = $newFolder }
 
-$confirmation = Read-Host "Do you want to continue with the default settings? (Y/N)"
+  $newUrl = Read-Host "  Enter file URL (press Enter to keep default)"
+  if ($newUrl) { $FileUrl = $newUrl }
 
-if ($confirmation -ne 'Y') {
-  # Prompt for new values if user chooses not to continue with the default
-  $folderPath = Read-Host "Enter the folder path for download and extraction (Default: C:\temp\Windows 11 v24H2 Security Baseline)"
-  if (-not $folderPath) {
-    $folderPath = "C:\temp\Windows 11 v24H2 Security Baseline"  # Revert to default if no input
-  }
-    
-  $fileUrl = Read-Host "Enter the GitHub file URL to download (Default: https://github.com/dgulle/Security-Baselines/archive/refs/heads/master.zip)"
-  if (-not $fileUrl) {
-    $fileUrl = "https://github.com/dgulle/Security-Baselines/archive/refs/heads/master.zip"  # Revert to default if no input
-  }
-}
+  Write-Host ""
+  Write-Host "  Updated folder path : $FolderPath" -ForegroundColor Yellow
+  Write-Host "  Updated file URL    : $FileUrl"    -ForegroundColor Yellow
+  Write-Host ""
 
-Log-Message "Using the following settings:"
-Log-Message "Folder path: $folderPath"
-Log-Message "File URL: $fileUrl"
-
-# Function to download and extract GitHub file
-function DownloadAndExtract-GitHubFile {
-  param (
-    [string]$fileUrl, # The GitHub raw file URL
-    [string]$destinationFolder      # The folder where to download and extract the file
-  )
-
-  # Define the target file path
-  $destinationPath = "$destinationFolder\master.zip"
-
-  # Check if the destination folder exists, if not, create it
-  if (-not (Test-Path -Path $destinationFolder)) {
-    Log-Message "Folder does not exist. Creating folder: $destinationFolder"
-    New-Item -Path $destinationFolder -ItemType Directory
-  }
-  else {
-    Log-Message "Folder already exists: $destinationFolder"
-  }
-
-  # Download the file from GitHub to the target folder
-  Log-Message "Downloading file from $fileUrl to $destinationPath"
-  Invoke-WebRequest -Uri $fileUrl -OutFile $destinationPath
-
-  Log-Message "Download complete!"
-
-  # Extract the zip file to the root of the destination folder
-  Log-Message "Extracting $destinationPath to $destinationFolder"
-  Expand-Archive -Path $destinationPath -DestinationPath $destinationFolder -Force
-
-  Log-Message "Extraction complete!"
-}
-
-# If the fileUrl and destinationFolder are provided, download and extract the GitHub file
-if ($fileUrl -and $folderPath) {
-  DownloadAndExtract-GitHubFile -fileUrl $fileUrl -destinationFolder $folderPath
-}
-
-# Check if Microsoft.Graph.Beta module is installed
-$moduleName = "Microsoft.Graph.Beta"
-$module = Get-InstalledModule -Name $moduleName -ErrorAction SilentlyContinue
-
-# If the module is not installed, install it for the current user
-if (-not $module) {
-  Log-Message "$moduleName module is not installed. Installing for the current user..."
-  Install-Module -Name $moduleName -Scope CurrentUser -Force -AllowClobber
-}
-else {
-  Log-Message "$moduleName module is already installed."
-  Import-Module Microsoft.Graph.Beta.DeviceManagement
-  Connect-MgGraph -Scopes "DeviceManagementConfiguration.Read.All", "DeviceManagementConfiguration.ReadWrite.All"
-}
-
-# Prompt user for path if it's not provided
-$defaultPath = Join-Path $folderPath "Security-Baselines-master\Windows Baseline 24H2" #fixed by https://www.linkedin.com/in/jessies/
-if (-not $defaultPath) {
-  $defaultPath = Read-Host "Enter the path to the Windows Baseline 24H2 folder (Press Enter to use the default: $defaultPath)"
-}
-
-# If the user didn't enter a path, confirm using the default
-if ($defaultPath) {
-  $confirmation = Read-Host "The following path will be used: $defaultPath. Do you want to proceed? (Y/N)"
-  if ($confirmation -ne 'Y') {
-    Log-Message "Script aborted."
+  $confirm = Read-Host "Proceed with updated settings? (Y/N)"
+  if ($confirm -notin @('Y', 'y')) {
+    Write-Log "Script aborted by user." "Red"
     exit
   }
 }
 
-# Loop through all Baseline files
-function invoke-list-WindowsBaseline24H2-files {
-  param (
-    [string]$path
-  )
+Write-Log "Settings confirmed." "Green"
 
-  Get-ChildItem -Path $path -Recurse -Filter *.json | ForEach-Object {
-    [PSCustomObject]@{
-      Name = $_.Name
-    }
+# ── Step 2 – Download and extract the baseline archive ───────────────────────
+Write-Log "Step 2: Download and extract baseline archive" "Cyan"
+
+$destinationZip = Join-Path $FolderPath "master.zip"
+
+# Create folder if needed
+if (-not (Test-Path -Path $FolderPath)) {
+  Write-Log "  Creating folder: $FolderPath" "Cyan"
+  New-Item -Path $FolderPath -ItemType Directory -Force | Out-Null
+}
+
+try {
+  Write-Log "  Downloading $FileUrl ..." "Cyan"
+  Invoke-WebRequest -Uri $FileUrl -OutFile $destinationZip -UseBasicParsing -ErrorAction Stop
+  Write-Log "  Download complete." "Green"
+}
+catch {
+  Write-Log "  ERROR: Failed to download file – $_" "Red"
+  exit 1
+}
+
+try {
+  Write-Log "  Extracting archive to $FolderPath ..." "Cyan"
+  Expand-Archive -Path $destinationZip -DestinationPath $FolderPath -Force -ErrorAction Stop
+  Write-Log "  Extraction complete." "Green"
+}
+catch {
+  Write-Log "  ERROR: Failed to extract archive – $_" "Red"
+  exit 1
+}
+
+# ── Step 3 – Ensure the Microsoft.Graph.Beta module is available ─────────────
+Write-Log "Step 3: Verify Microsoft.Graph.Beta module" "Cyan"
+
+$moduleName = "Microsoft.Graph.Beta"
+$module = Get-InstalledModule -Name $moduleName -ErrorAction SilentlyContinue
+
+if (-not $module) {
+  Write-Log "  $moduleName is not installed. Installing for current user..." "Yellow"
+  try {
+    Install-Module -Name $moduleName -Scope CurrentUser -Force -AllowClobber -ErrorAction Stop
+    Write-Log "  $moduleName installed successfully." "Green"
+  }
+  catch {
+    Write-Log "  ERROR: Failed to install $moduleName – $_" "Red"
+    exit 1
+  }
+}
+else {
+  Write-Log "  $moduleName is already installed." "Green"
+}
+
+Write-Log "  Importing Microsoft.Graph.Beta.DeviceManagement..." "Cyan"
+Import-Module Microsoft.Graph.Beta.DeviceManagement
+
+Write-Log "  Connecting to Microsoft Graph..." "Cyan"
+Connect-MgGraph -Scopes "DeviceManagementConfiguration.Read.All", "DeviceManagementConfiguration.ReadWrite.All"
+
+# ── Step 4 – Locate baseline JSON files ──────────────────────────────────────
+Write-Log "Step 4: Locate baseline JSON files" "Cyan"
+
+$baselinePath = Join-Path $FolderPath "Security-Baselines-master\Windows Baseline 24H2"
+
+if (-not (Test-Path -Path $baselinePath)) {
+  Write-Log "  ERROR: Baseline folder not found at $baselinePath" "Red"
+  exit 1
+}
+
+$jsonFiles = Get-ChildItem -Path $baselinePath -Filter *.json -Recurse
+Write-Log "  Found $($jsonFiles.Count) JSON baseline file(s) in $baselinePath" "Green"
+
+if ($jsonFiles.Count -eq 0) {
+  Write-Log "  No JSON files to process. Exiting." "Yellow"
+  exit
+}
+
+# ── Step 5 – Create Intune policies ──────────────────────────────────────────
+Write-Log "Step 5: Create Intune policies" "Cyan"
+
+$created  = 0
+$skipped  = 0
+
+foreach ($file in $jsonFiles) {
+  $policyName = $file.BaseName    # filename without extension
+
+  Write-Log "  Processing: $policyName" "Cyan"
+
+  # Check for existing policy
+  $existingPolicy = Get-MgBetaDeviceManagementConfigurationPolicy |
+    Where-Object { $_.Name -eq $policyName }
+
+  if ($existingPolicy) {
+    Write-Log "    Skipped – policy already exists." "Yellow"
+    $skipped++
+    continue
+  }
+
+  try {
+    $jsonContent = Get-Content -Path $file.FullName -Raw -ErrorAction Stop
+    New-MgBetaDeviceManagementConfigurationPolicy -BodyParameter $jsonContent -ErrorAction Stop
+    Write-Log "    Created successfully." "Green"
+    $created++
+  }
+  catch {
+    Write-Log "    ERROR: Failed to create policy – $_" "Red"
   }
 }
 
-$alljsonfiles = invoke-list-WindowsBaseline24H2-files -path $defaultPath
-
-foreach ($jsonfile in $alljsonfiles) {
-  $item = $($jsonfile.Name)
-  $policyname = $item -replace '.json$', ''  # This removes the ".json" extension
-
-  Log-Message "Working on baseline: $policyname"
-
-  # Check if a policy with the same name already exists
-  $existingPolicy = Get-MgBetaDeviceManagementConfigurationPolicy | Where-Object { $_.Name -eq $policyname } #updated 20225-02-19
-
-  if (!$existingPolicy) {
-    Log-Message "No existing policy with the name '$policyname'. Proceeding with creation."
-
-    # Read the content of the JSON template file
-    $jsonContent = Get-Content -Path "$defaultPath\$item" -Raw
-    $params = $jsonContent
-
-    Log-Message "Creating baseline Policy: $policyname"
-    New-MgBetaDeviceManagementConfigurationPolicy -BodyParameter $params
-    
-  }
-  else {
-    Log-Message "A policy with the name '$policyname' already exists. Skipping creation."
-  }
-}
-
-Log-Message "Script execution completed."
+# ── Summary ──────────────────────────────────────────────────────────────────
+Write-Host ""
+Write-Host "============================================================" -ForegroundColor Cyan
+Write-Host "  Summary                                                    " -ForegroundColor Cyan
+Write-Host "============================================================" -ForegroundColor Cyan
+Write-Log "  Policies created : $created"  "Green"
+Write-Log "  Policies skipped : $skipped"  "Yellow"
+Write-Log "  Total processed  : $($created + $skipped)" "Cyan"
+Write-Log "  Log file         : $logFilePath" "Cyan"
+Write-Host ""
+Write-Log "Script execution completed." "Green"

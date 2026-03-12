@@ -54,7 +54,12 @@ function Write-Log {
     [string]$Color = "White"
   )
   Write-Host $Message -ForegroundColor $Color
-  Add-Content -Path $logFilePath -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - $Message"
+  try {
+    Add-Content -Path $logFilePath -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - $Message" -ErrorAction Stop
+  }
+  catch {
+    Write-Warning "Unable to write to log file: $logFilePath"
+  }
 }
 
 # ── Step 1 – Confirm settings ───────────────────────────────────────────────
@@ -142,11 +147,17 @@ else {
   Write-Log "  $moduleName is already installed." "Green"
 }
 
-Write-Log "  Importing Microsoft.Graph.Beta.DeviceManagement..." "Cyan"
-Import-Module Microsoft.Graph.Beta.DeviceManagement
+try {
+  Write-Log "  Importing Microsoft.Graph.Beta.DeviceManagement..." "Cyan"
+  Import-Module Microsoft.Graph.Beta.DeviceManagement -ErrorAction Stop
 
-Write-Log "  Connecting to Microsoft Graph..." "Cyan"
-Connect-MgGraph -Scopes "DeviceManagementConfiguration.Read.All", "DeviceManagementConfiguration.ReadWrite.All"
+  Write-Log "  Connecting to Microsoft Graph..." "Cyan"
+  Connect-MgGraph -Scopes "DeviceManagementConfiguration.Read.All", "DeviceManagementConfiguration.ReadWrite.All" -ErrorAction Stop
+}
+catch {
+  Write-Log "  ERROR: Failed to import module or connect to Microsoft Graph – $_" "Red"
+  exit 1
+}
 
 # ── Step 4 – Locate baseline JSON files ──────────────────────────────────────
 Write-Log "Step 4: Locate baseline JSON files" "Cyan"

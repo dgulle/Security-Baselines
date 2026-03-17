@@ -263,6 +263,17 @@ function Deploy-BaselinePolicies {
 
     try {
       $jsonContent = Get-Content -Path $file.FullName -Raw -ErrorAction Stop
+
+      # Strip templateReference so policies are created as Settings Catalog, not Security Baselines
+      $jsonObject = $jsonContent | ConvertFrom-Json
+      $jsonObject.templateReference = @{
+        templateId             = ""
+        templateFamily         = "none"
+        templateDisplayName    = $null
+        templateDisplayVersion = $null
+      }
+      $jsonContent = $jsonObject | ConvertTo-Json -Depth 100
+
       $newPolicy = New-MgBetaDeviceManagementConfigurationPolicy -BodyParameter $jsonContent -ErrorAction Stop
       Write-Log "      Created successfully." "Green"
       $result.Created++

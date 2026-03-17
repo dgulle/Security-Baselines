@@ -2,7 +2,7 @@
 .SYNOPSIS
   Creates Windows 11 v24H2 Security Baseline policies in Intune from GitHub files projets from Dustin Gullett
   https://www.linkedin.com/in/dustin-gullett-83607b1ba/ ,   https://github.com/dgulle/Security-Baselines
-  Post reference: https://www.getrubix.com/blog/rolling-out-intune-security-baselines-without-causing-a-workplace-uprising
+  Post reference: https://zerototrust.tech/rolling-out-intune-security-baselines-without-causing-a-workplace-uprising/
 
 .DESCRIPTION
     Downloads the Security-Baselines repository from GitHub, extracts the Windows Baseline 24H2

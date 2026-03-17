@@ -148,14 +148,19 @@ else {
 }
 
 try {
+  # Remove any previously loaded Microsoft.Graph modules to avoid assembly version conflicts
+  Write-Log "  Removing any previously loaded Microsoft.Graph modules..." "Cyan"
+  Get-Module Microsoft.Graph* | Remove-Module -Force -ErrorAction SilentlyContinue
+
   Write-Log "  Importing Microsoft.Graph.Beta.DeviceManagement..." "Cyan"
-  Import-Module Microsoft.Graph.Beta.DeviceManagement -ErrorAction Stop
+  Import-Module Microsoft.Graph.Beta.DeviceManagement -Force -ErrorAction Stop
 
   Write-Log "  Connecting to Microsoft Graph..." "Cyan"
   Connect-MgGraph -Scopes "DeviceManagementConfiguration.Read.All", "DeviceManagementConfiguration.ReadWrite.All" -ErrorAction Stop
 }
 catch {
   Write-Log "  ERROR: Failed to import module or connect to Microsoft Graph – $_" "Red"
+  Write-Log "  TIP: If you see an assembly version conflict, close this PowerShell session, open a new one, and re-run the script." "Yellow"
   exit 1
 }
 

@@ -152,6 +152,26 @@ try {
   Write-Log "  Removing any previously loaded Microsoft.Graph modules..." "Cyan"
   Get-Module Microsoft.Graph* | Remove-Module -Force -ErrorAction SilentlyContinue
 
+  # Clean up duplicate Microsoft.Graph.Authentication versions that cause assembly conflicts
+  $authVersions = Get-Module -Name Microsoft.Graph.Authentication -ListAvailable
+  if ($authVersions.Count -gt 1) {
+    Write-Log "  Multiple versions of Microsoft.Graph.Authentication detected. Cleaning up old versions..." "Yellow"
+    $latest = $authVersions | Sort-Object Version -Descending | Select-Object -First 1
+    foreach ($oldVersion in ($authVersions | Where-Object { $_.Version -ne $latest.Version })) {
+      try {
+        Uninstall-Module -Name Microsoft.Graph.Authentication -RequiredVersion $oldVersion.Version -Force -ErrorAction SilentlyContinue
+        Write-Log "    Removed Microsoft.Graph.Authentication v$($oldVersion.Version)" "Yellow"
+      }
+      catch {
+        Write-Log "    Could not remove Microsoft.Graph.Authentication v$($oldVersion.Version) – $_" "Yellow"
+      }
+    }
+  }
+
+  # Import Authentication module first so the correct version is loaded before dependent modules
+  Write-Log "  Importing Microsoft.Graph.Authentication..." "Cyan"
+  Import-Module Microsoft.Graph.Authentication -Force -ErrorAction Stop
+
   Write-Log "  Importing Microsoft.Graph.Beta.DeviceManagement..." "Cyan"
   Import-Module Microsoft.Graph.Beta.DeviceManagement -Force -ErrorAction Stop
 
@@ -160,7 +180,7 @@ try {
 }
 catch {
   Write-Log "  ERROR: Failed to import module or connect to Microsoft Graph – $_" "Red"
-  Write-Log "  TIP: If you see an assembly version conflict, close this PowerShell session, open a new one, and re-run the script." "Yellow"
+  Write-Log "  TIP: Try running 'Uninstall-Module Microsoft.Graph -AllVersions -Force' and 'Update-Module Microsoft.Graph.Beta -Force', then re-run in a new PowerShell session." "Yellow"
   exit 1
 }
 

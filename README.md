@@ -97,36 +97,6 @@ Unified deployment script that downloads the baseline JSON files from this repos
 
 A log file is written to `%TEMP%\Deploy-SecurityBaselines.log` with timestamps for each operation.
 
-## Repository Structure
-
-```
-Security-Baselines/
-├── Deploy-SecurityBaselines.ps1                          # Unified deployment script
-├── Create-Windows-11-v25H2-Security-Baseline.ps1         # Windows-only deployment script
-├── GPO_Export_Template.xlsx
-├── README.md
-├── Windows Baseline 25H2/
-│   ├── Security Baseline 25H2 - Administrative Templates.json
-│   ├── Security Baseline 25H2 - Auditing.json
-│   ├── Security Baseline 25H2 - Browser.json
-│   ├── ...                                               # 28 policy JSON files
-│   └── UAT Form.xlsx
-├── Edge Baseline/
-│   ├── Edge Baseline - v128_Extensions.json
-│   ├── Edge Baseline - v128_Microsoft Edge.json
-│   ├── ...                                               # 7 policy JSON files
-│   └── Baseline Template and Script/                     # Export script (not for deployment)
-│       ├── MS_Edge_Baseline_Export.ps1
-│       └── Edge Baseline - v128.json
-└── M365 Baseline/
-    ├── Access.json
-    ├── Excel.json
-    ├── Outlook.json
-    ├── ...                                               # 12 policy JSON files
-    └── Baseline Template and Script/                     # Export script (not for deployment)
-        ├── M365 Baselines Export.ps1
-        └── M365 Baseline Template.json
-```
 
 ## Export Scripts
 
@@ -138,5 +108,5 @@ The `Baseline Template and Script/` subdirectories contain utility scripts for e
 ## Credits
 
 - [Dustin Gullett](https://www.linkedin.com/in/dustin-gullett-83607b1ba/) - Repository maintainer
-- [Thiago Beier](https://www.youracclaim.com/) - Deployment script author
+- [Thiago Beier](https://github.com/thiagogbeier) - Deployment script author
 - Blog post: [Rolling Out Intune Security Baselines Without Causing a Workplace Uprising](https://zerototrust.tech/rolling-out-intune-security-baselines-without-causing-a-workplace-uprising/)

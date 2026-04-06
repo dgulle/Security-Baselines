@@ -1,0 +1,56 @@
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies/$entity",
+  "createdDateTime": "2025-02-17T14:41:28.3977276Z",
+  "creationSource": null,
+  "description": "",
+  "lastModifiedDateTime": "2025-02-17T14:41:28.3977276Z",
+  "name": "Security Baseline 25H2 - Experience",
+  "platforms": "windows10",
+  "priorityMetaData": null,
+  "roleScopeTagIds": ["0"],
+  "settingCount": 1,
+  "technologies": "mdm",
+  "id": "937c834f-2281-4549-b22e-c0a3e41a992e",
+  "templateReference": {
+    "templateId": "",
+    "templateFamily": "none",
+    "templateDisplayName": null,
+    "templateDisplayVersion": null
+  },
+  "settings": [
+    {
+      "id": "0",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "user_vendor_msft_policy_config_experience_allowwindowsspotlight",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "settingValueTemplateReference": null,
+          "value": "user_vendor_msft_policy_config_experience_allowwindowsspotlight_1",
+          "children": [
+            {
+              "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+              "settingDefinitionId": "user_vendor_msft_policy_config_experience_allowthirdpartysuggestionsinwindowsspotlight",
+              "settingInstanceTemplateReference": null,
+              "choiceSettingValue": {
+                "settingValueTemplateReference": null,
+                "value": "user_vendor_msft_policy_config_experience_allowthirdpartysuggestionsinwindowsspotlight_0",
+                "children": []
+              }
+            },
+            {
+              "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+              "settingDefinitionId": "device_vendor_msft_policy_config_experience_allowwindowsconsumerfeatures",
+              "settingInstanceTemplateReference": null,
+              "choiceSettingValue": {
+                "settingValueTemplateReference": null,
+                "value": "device_vendor_msft_policy_config_experience_allowwindowsconsumerfeatures_0",
+                "children": []
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

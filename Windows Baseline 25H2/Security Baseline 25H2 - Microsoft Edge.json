@@ -1,0 +1,48 @@
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies/$entity",
+  "createdDateTime": "2025-02-17T14:49:54.5189591Z",
+  "creationSource": null,
+  "description": "",
+  "lastModifiedDateTime": "2025-02-17T14:49:54.5189591Z",
+  "name": "Security Baseline 25H2 - Microsoft Edge",
+  "platforms": "windows10",
+  "priorityMetaData": null,
+  "roleScopeTagIds": ["0"],
+  "settingCount": 2,
+  "technologies": "mdm",
+  "id": "5bcf3fdf-cfa7-4dde-a871-872c3a922152",
+  "templateReference": {
+    "templateId": "",
+    "templateFamily": "none",
+    "templateDisplayName": null,
+    "templateDisplayVersion": null
+  },
+  "settings": [
+    {
+      "id": "0",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "device_vendor_msft_policy_config_microsoft_edge~policy~microsoft_edge~smartscreen_smartscreenenabled",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_microsoft_edge~policy~microsoft_edge~smartscreen_smartscreenenabled_1",
+          "children": []
+        }
+      }
+    },
+    {
+      "id": "1",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "device_vendor_msft_policy_config_microsoft_edge~policy~microsoft_edge~smartscreen_preventsmartscreenpromptoverride",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_microsoft_edge~policy~microsoft_edge~smartscreen_preventsmartscreenpromptoverride_1",
+          "children": []
+        }
+      }
+    }
+  ]
+}

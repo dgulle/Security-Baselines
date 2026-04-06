@@ -1,0 +1,87 @@
+﻿{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies/$entity",
+  "createdDateTime": "2025-02-17T14:40:07.2119888Z",
+  "creationSource": null,
+  "description": "",
+  "lastModifiedDateTime": "2025-02-26T16:06:06.8307081Z",
+  "name": "Security Baseline 25H2 - Device Guard",
+  "platforms": "windows10",
+  "priorityMetaData": null,
+  "roleScopeTagIds": ["0"],
+  "settingCount": 5,
+  "technologies": "mdm",
+  "id": "be1a4ea5-54f5-4c1d-afe1-c85e8ffb5e72",
+  "templateReference": {
+    "templateId": "",
+    "templateFamily": "none",
+    "templateDisplayName": null,
+    "templateDisplayVersion": null
+  },
+  "settings": [
+    {
+      "id": "0",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "device_vendor_msft_policy_config_deviceguard_configuresystemguardlaunch",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_deviceguard_configuresystemguardlaunch_1",
+          "children": []
+        }
+      }
+    },
+    {
+      "id": "1",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "device_vendor_msft_policy_config_deviceguard_lsacfgflags",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_deviceguard_lsacfgflags_1",
+          "children": []
+        }
+      }
+    },
+    {
+      "id": "2",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "device_vendor_msft_policy_config_deviceguard_enablevirtualizationbasedsecurity",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_deviceguard_enablevirtualizationbasedsecurity_1",
+          "children": []
+        }
+      }
+    },
+    {
+      "id": "3",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "device_vendor_msft_policy_config_deviceguard_machineidentityisolation",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_deviceguard_machineidentityisolation_0",
+          "children": []
+        }
+      }
+    },
+    {
+      "id": "4",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "device_vendor_msft_policy_config_deviceguard_requireplatformsecurityfeatures",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_deviceguard_requireplatformsecurityfeatures_1",
+          "children": []
+        }
+      }
+    }
+  ]
+}

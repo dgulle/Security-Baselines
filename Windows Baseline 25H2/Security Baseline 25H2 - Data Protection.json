@@ -1,0 +1,35 @@
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies/$entity",
+  "createdDateTime": "2025-02-17T12:50:21.598032Z",
+  "creationSource": null,
+  "description": "",
+  "lastModifiedDateTime": "2025-02-17T12:50:21.598032Z",
+  "name": "Security Baseline 25H2 - Data Protection",
+  "platforms": "windows10",
+  "priorityMetaData": null,
+  "roleScopeTagIds": ["0"],
+  "settingCount": 1,
+  "technologies": "mdm",
+  "id": "0ec7abef-b5a0-410a-880a-f3a65d228e9d",
+  "templateReference": {
+    "templateId": "",
+    "templateFamily": "none",
+    "templateDisplayName": null,
+    "templateDisplayVersion": null
+  },
+  "settings": [
+    {
+      "id": "0",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "device_vendor_msft_policy_config_dataprotection_allowdirectmemoryaccess",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_dataprotection_allowdirectmemoryaccess_0",
+          "children": []
+        }
+      }
+    }
+  ]
+}

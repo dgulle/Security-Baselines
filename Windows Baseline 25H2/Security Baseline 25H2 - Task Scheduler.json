@@ -1,0 +1,35 @@
+﻿{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies/$entity",
+  "createdDateTime": "2025-02-17T14:53:21.2734125Z",
+  "creationSource": null,
+  "description": "",
+  "lastModifiedDateTime": "2025-02-17T14:53:21.2734125Z",
+  "name": "Security Baseline 25H2 - Task Scheduler",
+  "platforms": "windows10",
+  "priorityMetaData": null,
+  "roleScopeTagIds": ["0"],
+  "settingCount": 1,
+  "technologies": "mdm",
+  "id": "bb6b45b6-b499-48a1-8fa2-434352c5236c",
+  "templateReference": {
+    "templateId": "",
+    "templateFamily": "none",
+    "templateDisplayName": null,
+    "templateDisplayVersion": null
+  },
+  "settings": [
+    {
+      "id": "0",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "device_vendor_msft_policy_config_taskscheduler_enablexboxgamesavetask",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_taskscheduler_enablexboxgamesavetask_0",
+          "children": []
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+﻿{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies/$entity",
+  "createdDateTime": "2025-02-17T14:50:28.8948325Z",
+  "creationSource": null,
+  "description": "",
+  "lastModifiedDateTime": "2025-02-17T14:50:28.8948325Z",
+  "name": "Security Baseline 25H2 - Privacy",
+  "platforms": "windows10",
+  "priorityMetaData": null,
+  "roleScopeTagIds": ["0"],
+  "settingCount": 1,
+  "technologies": "mdm",
+  "id": "03e7c8ff-254c-4595-8408-621963f88602",
+  "templateReference": {
+    "templateId": "",
+    "templateFamily": "none",
+    "templateDisplayName": null,
+    "templateDisplayVersion": null
+  },
+  "settings": [
+    {
+      "id": "0",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "device_vendor_msft_policy_config_privacy_letappsactivatewithvoiceabovelock",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "settingValueTemplateReference": null,
+          "value": "device_vendor_msft_policy_config_privacy_letappsactivatewithvoiceabovelock_2",
+          "children": []
+        }
+      }
+    }
+  ]
+}

@@ -4,14 +4,14 @@
 
 .DESCRIPTION
     Downloads the Security-Baselines repository from GitHub, extracts the selected
-    baseline JSON files (Windows 24H2, Edge v128, M365), and creates Intune device
+    baseline JSON files (Windows 25H2, Edge v128, M365), and creates Intune device
     management configuration policies for each one. Existing policies with the same
     name are skipped. Optionally assigns all created policies to an Entra ID security group.
 
     Temporary files are automatically cleaned up after deployment.
 
 .PARAMETER InstallWindows
-    Deploy Windows 11 v24H2 Security Baseline policies (28 policies).
+    Deploy Windows 11 v25H2 Security Baseline policies (28 policies).
 
 .PARAMETER InstallEdge
     Deploy Microsoft Edge v128 Security Baseline policies (7 policies).
@@ -108,7 +108,7 @@ Write-Host "============================================================" -Foreg
 Write-Host ""
 
 $selectedBaselines = @()
-if ($InstallWindows) { $selectedBaselines += "Windows 11 v24H2" }
+if ($InstallWindows) { $selectedBaselines += "Windows 11 v25H2" }
 if ($InstallEdge)    { $selectedBaselines += "Microsoft Edge v128" }
 if ($InstallM365)    { $selectedBaselines += "Microsoft 365 Apps" }
 
@@ -320,8 +320,8 @@ $totals = @{ Created = 0; Skipped = 0; Failed = 0 }
 $baselines = @()
 if ($InstallWindows) {
   $baselines += @{
-    Name = "Windows 11 v24H2"
-    Path = Join-Path $repoRoot "Windows Baseline 24H2"
+    Name = "Windows 11 v25H2"
+    Path = Join-Path $repoRoot "Windows Baseline 25H2"
   }
 }
 if ($InstallEdge) {

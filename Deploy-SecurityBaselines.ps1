@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  Deploys Intune Security Baseline policies from the Security-Baselines GitHub repository.
+  Deploys Intune Security Baseline policies from the Security Baselines GitHub repository.
 
 .DESCRIPTION
     Downloads the Security-Baselines repository from GitHub, extracts the selected

@@ -51,13 +51,13 @@ catch {
 
 # Define categories and patterns for filtering settings
 $categories = @{
-    "Extensions" = "extensions"
-    "HTTP authentication" = "httpauthentication"
-    "Native Messaging" = "nativemessaging"
+    "Extensions"                       = "extensions"
+    "HTTP authentication"              = "httpauthentication"
+    "Native Messaging"                 = "nativemessaging"
     "Private Network Request Settings" = "privatenetworkrequestsettings"
-    "SmartScreen settings" = "smartscreen"
-    "Typosquatting Checker settings" = "typosquattingchecker"
-    "Microsoft Edge" = "toolbarbuttonenabled|internetexplorerintegration|sslerroroverrideallowed|dynamiccodesettings|applicationboundencryptionenabled|browserlegacyextensionpointsblockingenabled|siteperprocess|sharedarraybufferunrestrictedaccessallowed"
+    "SmartScreen settings"             = "smartscreen"
+    "Typosquatting Checker settings"   = "typosquattingchecker"
+    "Microsoft Edge"                   = "toolbarbuttonenabled|internetexplorerintegration|sslerroroverrideallowed|dynamiccodesettings|applicationboundencryptionenabled|browserlegacyextensionpointsblockingenabled|siteperprocess|sharedarraybufferunrestrictedaccessallowed"
 }
 
 # Process each category and export to JSON
@@ -65,8 +65,8 @@ foreach ($categoryName in $categories.Keys) {
     Write-Verbose "Processing category: $categoryName"
     $pattern = $categories[$categoryName]
     $filteredSettings = @($baseline.settings | Where-Object {
-        $_.settingInstance.settingDefinitionId -imatch $pattern
-    })
+            $_.settingInstance.settingDefinitionId -imatch $pattern
+        })
     
     $categoryObject = [PSCustomObject]@{
         description       = $baseline.description
@@ -79,6 +79,6 @@ foreach ($categoryName in $categories.Keys) {
     }
     
     $outputPath = Join-Path -Path $OutputDirectory -ChildPath "$($baseline.name)_$categoryName.json"
-    $categoryObject | ConvertTo-Json -Depth 10 | Out-File -FilePath $outputPath
+    $categoryObject | ConvertTo-Json -Depth 10 | Out-File -FilePath $outputPath -Encoding utf8
     Write-Host "Exported $categoryName settings to $outputPath" -ForegroundColor Green
 }

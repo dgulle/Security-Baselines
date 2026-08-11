@@ -247,25 +247,41 @@ function Deploy-BaselinePolicies {
 
   $result = @{ Created = 0; Skipped = 0; Failed = 0 }
 
+  # Read the tenant's policy names once per baseline instead of once per file. -All matters here:
+  # without it only the first page comes back, so an existing policy further down the list looks
+  # absent and gets created a second time.
+  $existingNames = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+  foreach ($policy in (Get-MgBetaDeviceManagementConfigurationPolicy -All)) {
+    [void]$existingNames.Add($policy.Name)
+  }
+
   foreach ($file in $jsonFiles) {
-    $policyName = $file.BaseName
+    try {
+      $jsonContent = Get-Content -Path $file.FullName -Raw -ErrorAction Stop
+      $jsonObject  = $jsonContent | ConvertFrom-Json
+    }
+    catch {
+      Write-Log "    ERROR: Could not read $($file.Name) - $_" "Red"
+      $result.Failed++
+      continue
+    }
+
+    # Intune names the policy from the JSON's name field, not the file name, so the duplicate check
+    # has to compare against that. Comparing file names meant the check never matched and every run
+    # created another copy.
+    $policyName = $jsonObject.name
+    if (-not $policyName) { $policyName = $file.BaseName }
+
     Write-Log "    Processing: $policyName" "Cyan"
 
-    # Check for existing policy with the same name
-    $existingPolicy = Get-MgBetaDeviceManagementConfigurationPolicy |
-      Where-Object { $_.Name -eq $policyName }
-
-    if ($existingPolicy) {
+    if ($existingNames.Contains($policyName)) {
       Write-Log "      Skipped - policy already exists." "Yellow"
       $result.Skipped++
       continue
     }
 
     try {
-      $jsonContent = Get-Content -Path $file.FullName -Raw -ErrorAction Stop
-
       # Strip templateReference so policies are created as Settings Catalog, not Security Baselines
-      $jsonObject = $jsonContent | ConvertFrom-Json
       $jsonObject.templateReference = @{
         templateId             = ""
         templateFamily         = "none"
@@ -277,6 +293,9 @@ function Deploy-BaselinePolicies {
       $newPolicy = New-MgBetaDeviceManagementConfigurationPolicy -BodyParameter $jsonContent -ErrorAction Stop
       Write-Log "      Created successfully." "Green"
       $result.Created++
+
+      # Track it so two files sharing a name in the same run don't both get created.
+      [void]$existingNames.Add($policyName)
 
       # Assign to group if specified
       if ($GroupId) {

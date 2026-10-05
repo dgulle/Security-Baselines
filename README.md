@@ -26,6 +26,12 @@ Intune Security Baseline JSON configuration files and automated deployment scrip
 
 No settings were removed in 26H2.
 
+### Repository Fix in 26H2
+
+| Setting | Location | Previous Value | Fixed Value | Notes |
+|---------|----------|---------------|-------------|-------|
+| Prevent installation of devices using drivers that match these device setup classes (Prevented Classes) | Admin Templates > System > Device Installation > Device Installation Restrictions | `" {d48179be-ec20-11d1-b6b8-00c04fa372a7}"` | `"{d48179be-ec20-11d1-b6b8-00c04fa372a7}"` | Not a Microsoft baseline change. The 24H2 and 25H2 files had a leading space in the class GUID, so the IEEE 1394 (SBP-2) device class block likely didn't match on devices. The value now matches Microsoft's baseline. |
+
 > **Note:** Microsoft's Intune 26H2 baseline announcement also lists **Configure NetBIOS settings** as pending. It isn't in the Settings Catalog yet, so it isn't included here.
 
 ## Settings Added in 25H2

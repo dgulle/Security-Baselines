@@ -6,11 +6,27 @@ Intune Security Baseline JSON configuration files and automated deployment scrip
 
 | Baseline | Policies | Directory |
 |---|---|---|
-| Windows 11 v25H2 | 28 | `Windows Baseline 25H2/` |
+| Windows 11 v26H2 | 28 | `Windows Baseline 26H2/` |
 | Microsoft Edge v128 | 7 | `Edge Baseline/` |
 | Microsoft 365 Apps | 12 | `M365 Baseline/` |
 
 > **Note:** The Windows Security Baseline does not include the LAPS category setting for Backup Directory. This setting does not appear in the Settings Catalog.
+
+## Settings Added in 26H2
+
+| Setting | Location | 26H2 Default | Notes |
+|---------|----------|-------------|-------|
+| Configure Windows Ready Print driver ranking | Admin Templates > Printers | Enabled | Windows prefers the inbox IPP class driver over third-party V3/V4 OEM drivers when a new printer is installed over an IPP-capable connection (USB, network multicast discovery). Printers that don't support IPP, or that are added directly as TCP/IP printers, are unaffected. Test any printer models that rely on vendor driver features. Registry: `HKLM\Software\Policies\Microsoft\Windows NT\Printers\DriverRanking!UseWindowsReadyPrintDriverRankingGroupPolicy = 1`. |
+
+## Settings Changed in 26H2
+
+| Setting | Location | 25H2 Value | 26H2 Value | Notes |
+|---------|----------|-----------|-----------|-------|
+| Turn off encryption support (Secure Protocol combinations) | Admin Templates > Windows Components > Internet Explorer > Internet Control Panel > Advanced Page | Use TLS 1.1 and TLS 1.2 (`2560`) | Use TLS 1.2 and TLS 1.3 (`10240`) | TLS 1.1 is obsolete. This sets the WinINet `SecureProtocols` value, so anything that still requires TLS 1.1 through WinINet will stop connecting. |
+
+No settings were removed in 26H2.
+
+> **Note:** Microsoft's Intune 26H2 baseline announcement also lists **Configure NetBIOS settings** as pending. It isn't in the Settings Catalog yet, so it isn't included here.
 
 ## Settings Added in 25H2
 
@@ -51,7 +67,7 @@ Unified deployment script that downloads the baseline JSON files from this repos
 
 | Parameter | Type | Description |
 |---|---|---|
-| `-InstallWindows` | Switch | Deploy Windows 11 v25H2 Security Baseline policies |
+| `-InstallWindows` | Switch | Deploy Windows 11 v26H2 Security Baseline policies |
 | `-InstallEdge` | Switch | Deploy Microsoft Edge v128 Security Baseline policies |
 | `-InstallM365` | Switch | Deploy Microsoft 365 Apps Security Baseline policies |
 | `-InstallAll` | Switch | Deploy all available baselines (Windows, Edge, and M365) |
